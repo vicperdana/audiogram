@@ -4,7 +4,7 @@
   "description": "Turn audio into a shareable video.",
   "main": "index.js",
   "scripts": {
-    "start": "npm run postinstall && bin/server",
+    "start": "npm run postinstall && forever start --minUptime 1000 --spinSleepTime 1000 bin/server",
     "worker": "bin/worker",
     "postinstall": "mkdir -p editor/js && browserify client/index.js > editor/js/bundle.js",
     "rebuild": "npm run postinstall",
